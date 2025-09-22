@@ -1,14 +1,17 @@
 const Express = require("express")
 const usersRoutes = require("./Routes/user")
+const aapp=require("./Routes/login")
 const mongoose = require("mongoose");
 const app = Express()
 
+app.use(Express.json())
 app.use(usersRoutes)
+app.use(aapp)
 
 const databaseURI="mongodb://localhost:27017/clarify"
 mongoose.connect(databaseURI,{
     // useNewUrlParsar:true,
-    useUnifiedTopology:true
+    //useUnifiedTopology:true
 }).then(()=>{
     console.log("Database has been connected successfully")
 }).catch((err)=>{
