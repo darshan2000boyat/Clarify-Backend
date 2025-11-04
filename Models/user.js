@@ -21,12 +21,16 @@ let userSchema = new Schema({
   password: {
     type: String,
     required: true,
-    minLength: 6,
+    minLength: 6 
+  },
+  phoneNo: {
+    type: String,
+    require : true
   },
   createdAt: {
     type: Date,
     default: Date.now,
   },
 });
-const User = model("user", userSchema);
+const User = model("user", userSchema);//yeh vo User jis me apan model store kar rhe hai 
 module.exports = User;

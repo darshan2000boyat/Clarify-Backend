@@ -1,14 +1,15 @@
 const Express = require("express")
 const usersRoutes = require("./Routes/user")
-const aapp=require("./Routes/login")
 const mongoose = require("mongoose");
+const cors = require("cors")
 const app = Express()
 
+app.use(cors("*"))
 app.use(Express.json())
 app.use(usersRoutes)
-app.use(aapp)
 
-const databaseURI="mongodb://localhost:27017/clarify"
+
+const databaseURI="mongodb+srv://vishapathak21:admin_visha@clarify.oval6k2.mongodb.net/?retryWrites=true&w=majority&appName=Clarify"
 mongoose.connect(databaseURI,{
     // useNewUrlParsar:true,
     //useUnifiedTopology:true
@@ -21,3 +22,4 @@ mongoose.connect(databaseURI,{
 app.listen(8000, ()=>{
     console.log("Server is runing on port",8000) 
 })
+
