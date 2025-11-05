@@ -1,7 +1,7 @@
 const{Router} = require("express");
-const invoivce = require("../Models/invoice");
+const Invoice = require("../Models/invoice");
+const { invoiceController } = require("../Controllers/invoice.controller");
 const routes = Router();
 
-routes.get("/create",(req,res) => {
-    const { title, invoiceNumber, date, dueDate, businessDetail, clientDetails, product} = req.body;
-})
+routes.get("/create", invoiceController)
+module.exports=routes;

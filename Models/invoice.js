@@ -1,5 +1,9 @@
-const { Schema, model } = required("mongoose");
+const { Schema, model, isValidObjectId } = require("mongoose");
 let invoiceSchema = new Schema({
+    userId:{
+        type: ObjectId,
+        required:true,
+    },
     title: {
         type: String,
         required: true,

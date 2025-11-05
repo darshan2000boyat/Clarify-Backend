@@ -1,5 +1,6 @@
 const Express = require("express")
 const usersRoutes = require("./Routes/user")
+const userInvoice = require("./Routes/invoice")
 const mongoose = require("mongoose");
 const cors = require("cors")
 const app = Express()
@@ -7,6 +8,7 @@ const app = Express()
 app.use(cors("*"))
 app.use(Express.json())
 app.use(usersRoutes)
+app.use(userInvoice)
 
 
 const databaseURI="mongodb+srv://vishapathak21:admin_visha@clarify.oval6k2.mongodb.net/?retryWrites=true&w=majority&appName=Clarify"
